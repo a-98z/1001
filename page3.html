@@ -100,6 +100,11 @@
             color: var(--secondary-color);
         }
         
+        /* Contact Header */
+        .contact-header {
+            color: white;
+        }
+        
         /* Page Title */
         .page-header {
             text-align: center;
@@ -152,7 +157,7 @@
             font-weight: 600;
         }
 
-        /* Gallery / Work Section */
+        /* Gallery / Work Section with Icons instead of Images */
         .work-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -165,6 +170,20 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .work-icon-box {
+            background-color: #f0f7f6;
+            padding: 2.5rem 0;
+            font-size: 4rem;
+            color: var(--primary-color);
         }
 
         .work-body {
@@ -174,7 +193,8 @@
         .work-body h3 {
             color: var(--secondary-color);
             margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
 
         .work-body p {
@@ -210,7 +230,7 @@
 
         .review-card::before {
             content: "\f10d";
-            font-family: "Font Awesome 5 Free";
+            font-family: "Font Awesome 6 Free";
             font-weight: 900;
             position: absolute;
             top: 15px;
@@ -375,36 +395,42 @@
             </div>
         </section>
 
-     <h2 class="section-title">من عمليات النقل والتوصيل اليومية</h2>
-<section class="work-grid">
-    
-    <div class="work-card">
-        <img src="img-bedroom.png.png" alt="نقل غرف نوم كاملة وطاولات" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-        <div class="work-body">
-            <h3>نقل غرف نوم كاملة وطاولات</h3>
-            <p>تم استلام الأثاث من حي الياسمين وتوصيله مباشرة للمستودعات الخيرية لفرزه وتوزيعه للأسر المستحقة.</p>
-        </div>
-    </div>
+        <h2 class="section-title">من عمليات النقل والتوصيل اليومية</h2>
+        <section class="work-grid">
+            
+            <div class="work-card">
+                <div class="work-icon-box">
+                    <i class="fas fa-bed"></i>
+                </div>
+                <div class="work-body">
+                    <h3>نقل غرف نوم كاملة وطاولات</h3>
+                    <p>تم استلام الأثاث من حي الياسمين وتوصيله مباشرة للمستودعات الخيرية لفرزه وتوزيعه للأسر المستحقة.</p>
+                </div>
+            </div>
 
-    <div class="work-card">
-        <img src="img-sofa.png.png" alt="تحميل وتوصيل مجالس وكنب" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-        <div class="work-body">
-            <h3>تحميل وتوصيل مجالس وكنب</h3>
-            <p>من حي الشفاء، تم النقل بأمان وسرعة بواسطة ديانات مجهزة ومخصصة لحماية الأثاث أثناء التوصيل.</p>
-        </div>
-    </div>
+            <div class="work-card">
+                <div class="work-icon-box">
+                    <i class="fas fa-couch"></i>
+                </div>
+                <div class="work-body">
+                    <h3>تحميل وتوصيل مجالس وكنب</h3>
+                    <p>من حي الشفاء، تم النقل بأمان وسرعة بواسطة ديانات مجهزة ومخصصة لحماية الأثاث أثناء التوصيل.</p>
+                </div>
+            </div>
 
-    <div class="work-card">
-        <img src="img-appliances.png.png" alt="نقل أجهزة كهربائية تبرع" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-        <div class="work-body">
-            <h3>نقل أجهزة كهربائية تبرع</h3>
-            <p>استلام مكيفات وثلاجات مستعملة بحالة ممتازة وإيصالها لشركائنا من الجمعيات الخيرية بالرياض.</p>
-        </div>
-    </div>
+            <div class="work-card">
+                <div class="work-icon-box">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <div class="work-body">
+                    <h3>نقل أجهزة كهربائية تبرع</h3>
+                    <p>استلام مكيفات وثلاجات مستعملة بحالة ممتازة وإيصالها لشركائنا من الجمعيات الخيرية بالرياض.</p>
+                </div>
+            </div>
 
-</section>
+        </section>
 
-        <h2 class="section-title">ماذا يقول عملؤنا عن الخدمة?</h2>
+        <h2 class="section-title">ماذا يقول عملاؤنا عن الخدمة؟</h2>
         <section class="reviews-section">
             <div class="reviews-grid">
                 <div class="review-card">
