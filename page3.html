@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أعمالنا - خدمة توصيل الأثاث بالرياض</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2a9d8f;
+            --secondary-color: #264653;
+            --accent-color: #e9c46a;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation Styles */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Top Navbar */
+        .top-nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+        }
+        
+        /* Page Title */
+        .page-header {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .page-header h2 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-card .label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Gallery / Work Section */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .work-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .work-img-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--secondary-color);
+            font-size: 3rem;
+        }
+
+        .work-body {
+            padding: 1.5rem;
+        }
+
+        .work-body h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .work-body p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .reviews-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .review-card::before {
+            content: "\f10d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 2rem;
+            color: rgba(42, 157, 143, 0.1);
+        }
+
+        .review-stars {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .review-text {
+            color: #444;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+        }
+
+        /* Bottom Pagination Buttons */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 3rem 0 1rem 0;
+        }
+
+        .btn-nav-page {
+            padding: 10px 25px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-nav-page:hover {
+            background-color: var(--primary-color);
+        }
+
+        .btn-nav-page.disabled {
+            background-color: #ccc;
+            color: #777;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .contact-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .top-nav {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <div>
+                    <h1>خدمة <span>توصيل الأثاث</span> الخيري</h1>
+                    <div class="tagline">من بيتك إلى الجمعيات الخيرية بالرياض</div>
+                </div>
+            </div>
+            
+            <nav class="top-nav">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <a href="page2.html" class="nav-link">الخدمات</a>
+                <a href="page3.html" class="nav-link active">أعمالنا</a>
+            </nav>
+
+            <div class="contact-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <div style="font-size: 0.9rem;">للتواصل والاستفسار</div>
+                        <div style="font-weight: 700; font-size: 1.2rem;">0559836277</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h2>شرفنا بخدمتكم وتوصيل تبرعاتكم بامتياز وثقة 🌟</h2>
+            <p>نستعرض معكم جانباً من إحصائيات عملنا، عمليات النقل اليومية، وآراء عملائنا الكرام بالرياض.</p>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-truck-moving"></i>
+                <div class="number">+1,200</div>
+                <div class="label">عملية نقل ناجحة</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <div class="number">20</div>
+                <div class="label">جمعية متعاونة</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div class="number">+950</div>
+                <div class="label">عميل سعيد بخدمتنا</div>
+            </div>
+        </section>
+
+        <h2 class="section-title">من عمليات النقل والتوصيل اليومية</h2>
+        <section class="work-grid">
+            <div class="work-card">
+                <div class="work-img-placeholder"><i class="fas fa-couch"></i></div>
+                <div class="work-body">
+                    <h3>نقل غرف نوم كاملة وطاولات</h3>
+                    <p>تم استلام الأثاث من حي الياسمين وتوصيله مباشرة للمستودعات الخيرية لفرزه وتوزيعه للأسر المستحقة.</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-placeholder"><i class="fas fa-truck"></i></div>
+                <div class="work-body">
+                    <h3>تحميل وتوصيل مجالس وكنب</h3>
+                    <p>من حي الشفاء، تم النقل بأمان وسرعة بواسطة ديانات مجهزة ومخصصة لحماية الأثاث أثناء التوصيل.</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-img-placeholder"><i class="fas fa-blender"></i></div>
+                <div class="work-body">
+                    <h3>نقل أجهزة كهربائية تبرع</h3>
+                    <p>استلام مكيفات وثلاجات مستعملة بحالة ممتازة وإيصالها لشركائنا من الجمعيات الخيرية بالرياض.</p>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title">ماذا يقول عملؤنا عن الخدمة؟</h2>
+        <section class="reviews-section">
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"ما شاء الله خدمة سريعة جداً تواصلت معهم وجاءت الديانة بنفس اليوم واستلمت الكنب، تعامل راقي وأمين الله يكتب أجرهم."</p>
+                    <div class="review-author">أبو محمد - حي الصحافة</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"وفروا علي جهد كبير كنت محتار كيف أوصل غرفة النوم للجمعية، الشباب فكوها ونقلوها بكل احترافية وبدون أي تعب مني."</p>
+                    <div class="review-author">أم سلطان - حي الملز</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination-container">
+            <a href="page2.html" class="btn btn-nav-page"><i class="fas fa-arrow-right"></i> السابق (الخدمات)</a>
+            <a href="#" class="btn btn-nav-page disabled">التالي <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <h2>خدمة توصيل الأثاث الخيري</h2>
+            </div>
+            
+            <p>نحن هنا لنساعدك في توصيل تبرعاتك من الأثاث المستعمل إلى الجمعيات الخيرية بالرياض</p>
+            
+            <div class="contact-footer">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0559836277</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>جميع أحياء الرياض</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>خدمة 24/7</span>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2026 خدمة توصيل الأثاث الخيري بالرياض. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
